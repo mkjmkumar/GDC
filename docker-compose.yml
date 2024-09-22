@@ -123,6 +123,9 @@ services:
       - PROXY_URL_SSL # https proxy to use. if USE_PROXY_HOST is enabled will be set to https://PROXY_CONTAINER_NAME:8080
       - PROXY_AUTO_EXPORT_ENV # auto export HTTP_PROXY and HTTPS_PROXY vars equal to PROXY_URL
       - DEV_CONTAINER=1.10.23 # used to detect if running inside dev container
+      - AWS_ACCESS_KEY_ID=tcQx8pGBLTsRH2302zbPV69w
+      - AWS_SECRET_ACCESS_KEY=AD7crl4K3Ai6K07hAW7SjV79tDBZAy6g/5AB328C77F324/ZJK36gtYbr
+      - AWS_DEFAULT_REGION=us-east-1
     ports:
       - "58080-58100:58080-58100" # expose ports 58080 to 58100
       - "56000:56000"             # expose port 56000
@@ -138,7 +141,6 @@ services:
       - terraform:/root/.terraform_plugin_cache # persist terraform plugin install
       - cache:/root/.cache # persist caches in ~/.cache folder
       - home_config:/root/.config # persist data for various apps such as bitwarden
-
 volumes:
   bash_history: # persist bash history
   persisted: # put things you want to persist between container rebuilds here
