@@ -3,5 +3,7 @@ services:
   localstack:
     ports:
       - "4566:4566"            # LocalStack Gateway
+      - "4510-4560:4510-4560"  # external services port range
+      - "4571:4571"            # elasticsearch service
     environment:
       - LOCALSTACK_HOST=${LOCALSTACK_HOST-localhost.localstack.cloud:4566} 
