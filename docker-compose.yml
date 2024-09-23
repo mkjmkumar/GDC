@@ -1,3 +1,4 @@
+
 services:
   dev:
     container_name: "${COMPOSE_PROJECT_NAME}-${DEV_CONTAINER_NAME-dev}"
@@ -141,6 +142,7 @@ services:
       - terraform:/root/.terraform_plugin_cache # persist terraform plugin install
       - cache:/root/.cache # persist caches in ~/.cache folder
       - home_config:/root/.config # persist data for various apps such as bitwarden
+
 volumes:
   bash_history: # persist bash history
   persisted: # put things you want to persist between container rebuilds here
