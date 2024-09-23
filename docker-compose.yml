@@ -128,7 +128,7 @@ services:
       - AWS_SECRET_ACCESS_KEY=AD7crl4K3Ai6K07hAW7SjV79tDBZAy6g/5AB328C77F324/ZJK36gtYbr
       - AWS_DEFAULT_REGION=us-east-1
     ports:
-      - "58080-58100:58080-58100" # expose ports 58080 to 58100
+      - "58080-58180:58080-58180" # expose ports 58080 to 58180
       - "56000:56000"             # expose port 56000
       - "6000:6000"               # expose port 6000
     volumes:
